@@ -2,8 +2,8 @@
 <h1 align="center">
   <a href="">
     <picture>
-      <source height="125" media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/iuvsqmp.png">
-      <img height="125" alt="Kraken" src="https://i.imgur.com/Z4LZoIk.png">
+      <source height="200" media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/iuvsqmp.png">
+      <img height="200" alt="Kraken" src="https://i.imgur.com/Z4LZoIk.png">
     </picture>
   </a>
   <br>
