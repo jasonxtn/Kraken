@@ -21,7 +21,7 @@
 
 ## ⚠️  WARNING: LEGAL DISCLAIMER
 
-This tool is intended for educational purposes only. The author is not responsible for any illegal use of this tool. Users are solely responsible 
+This tool is intended for educational purposes only. The author is not responsible for any illegal use of this tool. Users aresolely responsible 
 for their actions.
 
 ---
