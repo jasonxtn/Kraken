@@ -1,0 +1,35 @@
+
+[1/10001] Tested - http://api.canva.com [0.01%]
+
+[32m[1mSUCCESS![0m Subdomain found!
+[33m----------------------------------------
+URL: [36mhttp://api.canva.com[0m
+[33m----------------------------------------
+
+[3/10001] Tested - http://blob.canva.com [0.03%]
+
+[32m[1mSUCCESS![0m Subdomain found!
+[33m----------------------------------------
+URL: [36mhttp://blob.canva.com[0m
+[33m----------------------------------------
+
+[4/10001] Tested - http://apps.canva.com [0.04%]
+
+[32m[1mSUCCESS![0m Subdomain found!
+[33m----------------------------------------
+URL: [36mhttp://apps.canva.com[0m
+[33m----------------------------------------
+
+[1/10001] Tested - http://api.canva.com [0.01%]
+
+[32m[1mSUCCESS![0m Subdomain found!
+[33m----------------------------------------
+URL: [36mhttp://api.canva.com[0m
+[33m----------------------------------------
+
+[5/10001] Tested - http://apps.canva.com [0.05%]
+
+[32m[1mSUCCESS![0m Subdomain found!
+[33m----------------------------------------
+URL: [36mhttp://apps.canva.com[0m
+[33m----------------------------------------

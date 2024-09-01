@@ -1,0 +1,2 @@
+- Put your wordlists in wordlists folder or 
+- Ecrase the default one for fast usage 

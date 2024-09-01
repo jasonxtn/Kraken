@@ -1,0 +1,12 @@
+colorama
+pyfiglet
+click
+scapy
+pywifi
+requests
+paramiko
+sipfullproxy
+pyrad
+rich
+ldap3
+gevent
