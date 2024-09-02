@@ -1,11 +1,12 @@
 colorama
+gevent
 pyfiglet
-click
-scapy
-pywifi
 requests
+scapy
+click
+pywifi
 paramiko
 pyrad
 rich
 ldap3
-gevent
+
