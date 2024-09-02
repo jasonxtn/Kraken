@@ -8,9 +8,4 @@ pywifi
 paramiko
 pyrad
 rich
-<<<<<<< HEAD
 ldap3
-=======
-ldap3
-
->>>>>>> b2aafebf3cd978b8d18a1f7218ef801e21b39b4d
