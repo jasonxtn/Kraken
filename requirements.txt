@@ -4,8 +4,8 @@ pyfiglet
 requests
 scapy
 click
-pywifi
 paramiko
+pywifi
 pyrad
 rich
 ldap3
