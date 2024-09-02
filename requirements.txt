@@ -5,7 +5,6 @@ scapy
 pywifi
 requests
 paramiko
-sipfullproxy
 pyrad
 rich
 ldap3
