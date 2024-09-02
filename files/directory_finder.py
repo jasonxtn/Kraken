@@ -1,7 +1,6 @@
 import os
 import sys
 import requests
-import logging
 from colorama import Fore, Style, init
 from random import choice
 from threading import Lock
@@ -9,26 +8,21 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
 import pyfiglet
 
-
 init(autoreset=True)
 
-
-logging.basicConfig(filename=os.path.join('Logs', 'directory_finder.log'),
-                    level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
+# Removed logging setup
+# logging.basicConfig(filename=os.path.join('Logs', 'directory_finder.log'),
+#                     level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 results_dir = os.path.join(script_dir, '..', 'Results')
 logs_dir = os.path.join(script_dir, '..', 'Logs')
 wordlists_dir = os.path.join(script_dir, '..', 'wordlists')
 
-
 os.makedirs(results_dir, exist_ok=True)
 os.makedirs(logs_dir, exist_ok=True)
 
-
 output_lock = Lock()
-
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -36,7 +30,6 @@ user_agents = [
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
     'Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Mobile/15E148 Safari/604.1'
 ]
-
 
 custom_headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -107,13 +100,11 @@ class DirectoryFinder:
         status(f"Loading paths from {wordlist_file}...")
         if not os.path.isfile(wordlist_file):
             error(f"Wordlist file not found: {wordlist_file}")
-            logging.error(f"Wordlist file not found: {wordlist_file}")
             sys.exit(1)
         with open(wordlist_file, 'r', encoding='utf-8') as f:
             paths = [line.strip() for line in f if line.strip()]
         if not paths:
             error("No paths found in the wordlist.")
-            logging.error("No paths found.")
             sys.exit(1)
         success(f"{len(paths)} paths loaded from the wordlist.")
 
@@ -133,7 +124,6 @@ class DirectoryFinder:
                 try:
                     future.result()
                 except Exception as e:
-                    logging.error(f"Error processing path {path}: {e}")
                     error(f"Error processing path {path}: {e}")
 
         if self.found_directories:
@@ -174,14 +164,12 @@ class DirectoryFinder:
                     sys.stdout.flush()
 
         except requests.exceptions.RequestException as e:
-            logging.error(f"Failed to connect to {full_url}: {str(e)}")
             error(f"Failed to connect to {full_url}: {str(e)}")
 
 def main():
     try:
         DirectoryFinder()
     except KeyboardInterrupt:
-        logging.info("Script interrupted by user.")
         print(Fore.YELLOW + "Script interrupted by user.")
 
 if __name__ == '__main__':

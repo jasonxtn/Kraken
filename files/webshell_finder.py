@@ -2,30 +2,25 @@ import os
 import sys
 import re
 import hashlib
-import logging
 import requests
 import concurrent.futures
 from colorama import Fore, Style, init
 from queue import Queue
 import pyfiglet
 
-
 init(autoreset=True)
 
-
-logging.basicConfig(filename=os.path.join('Logs', 'webshell_finder.log'),
-                    level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
+# Removed logging setup
+# logging.basicConfig(filename=os.path.join('Logs', 'webshell_finder.log'),
+#                     level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 results_dir = os.path.join(script_dir, '..', 'Results')
 logs_dir = os.path.join(script_dir, '..', 'Logs')
 wordlists_dir = os.path.join(script_dir, '..', 'wordlists')
 
-
 os.makedirs(results_dir, exist_ok=True)
 os.makedirs(logs_dir, exist_ok=True)
-
 
 def load_wordlist(wordlist_file):
     try:
@@ -33,9 +28,7 @@ def load_wordlist(wordlist_file):
             return [line.strip() for line in f if line.strip()]
     except FileNotFoundError:
         error(f"Wordlist file not found: {wordlist_file}")
-        logging.error(f"Wordlist file not found: {wordlist_file}")
         sys.exit(1)
-
 
 webshell_keywords = [
     'eval(',
@@ -140,7 +133,6 @@ class WebshellFinder:
                         return self.report_shell(url, f"Content contains suspicious keyword: {signature}")
                 return self.report_shell(url, "URL is accessible and returns a valid response.")
         except requests.exceptions.RequestException as e:
-            logging.error(f"Error accessing URL {url}: {str(e)}")
             error(f"Error accessing URL {url}: {str(e)}")
         return None
 
@@ -149,7 +141,6 @@ class WebshellFinder:
         success(f"Potential webshell found: {url}")
         status(f"Reason: {reason}")
         report = f"{url} - {reason}"
-        logging.info(report)
         return report
 
 def main():
@@ -157,7 +148,6 @@ def main():
         finder = WebshellFinder()
         finder.run()
     except KeyboardInterrupt:
-        logging.info("Script interrupted by user.")
         print(Fore.YELLOW + "Script interrupted by user.")
 
 if __name__ == '__main__':
