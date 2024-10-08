@@ -53,10 +53,22 @@ cd Kraken
 pip install -r requirements.txt
 ```
 
+OR
+
+```bash
+docker build -t kraken .
+```
+
 To launch Kraken:
 
 ```bash
 python kraken.py
+```
+
+OR with docker
+
+```bash
+docker run -it --rm kraken
 ```
 
 ---
